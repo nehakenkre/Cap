@@ -1,0 +1,41 @@
+import java.util.*;
+public class Captcha1
+{
+   public static void main(String args[])
+   {
+     Scanner s=new Scanner(System.in);
+     int i=0;
+     
+     Random rnd = new Random();
+     int b=rnd.nextInt(Integer.MAX_VALUE);
+     System.out.println("Please input the value mentioned:"+b);
+     
+     System.out.println("Enter a string of numbers:");
+     int a=s.nextInt();
+     if(b==a)
+     {
+      System.out.println("Successfully Authenticated!!!");
+     }
+     if(b!=a){
+    do{  
+        System.out.println("Sorry!! Retry:");  
+        System.out.println("Enter a string of numbers:");
+        a=s.nextInt();
+        if(b==a)
+         {
+           System.out.println("Successfully Authnticated!!!");
+         }
+        else 
+         {
+          System.out.println("Authentication Failed!!!!");
+         } 
+        return;
+      }while(i<=3);
+     }
+   }
+}
+
+
+
+
+
